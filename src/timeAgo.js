@@ -18,7 +18,7 @@
     var weekC = diffValue / week; 
     var monthC = diffValue / month; 
     if (monthC >= 1 && monthC <= 3) { 
-        result = " " + parseInt(monthC) + " 月前" 
+        result = " " + parseInt(monthC) + " 个月前" 
     } else if (weekC >= 1 && weekC <= 3) { 
         result = " " + parseInt(weekC) + " 周前" 
     } else if (dayC >= 1 && dayC <= 6) { 

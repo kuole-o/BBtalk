@@ -1,7 +1,7 @@
-import timeAgo from './timeAgo'
+import {format} from './timeago.min'
 import urlToLink from './urlToLink'
 
 export {
-    timeAgo,
+    format,
     urlToLink
 }

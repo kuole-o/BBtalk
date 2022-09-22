@@ -1,4 +1,4 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const webpack = require('webpack')
 const path = require('path');
 const version = require('./package.json').version
@@ -20,7 +20,7 @@ module.exports = {
   },
   entry: './src/index.js',
   output: {
-    filename: 'bbtalk.js',
+    filename: 'bbtalk.min@' + version + '.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'bbtalk'
   },
