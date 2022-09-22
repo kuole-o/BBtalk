@@ -34,7 +34,7 @@
       <p class="tip" v-else>正在加载中…</p>
     </div> -->
     <button class="next" v-on:click="loadMore" v-if="contents.length < count" v-cloak>再翻翻</button>
-    <div class="loading" style="text-align: center; margin-top: 20px" v-else>{{message}}</div>
+    <div class="loading" style="text-align: center; margin-top: 20px" v-if="contents.length < 0" v-cloak>{{message}}</div>
   </main>
 </template>
 
