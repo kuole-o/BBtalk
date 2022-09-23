@@ -158,6 +158,20 @@ export default {
 }
 
 /* bb样式 */
+/* 移动端自定义布局适配 */
+@media screen and (max-width: 768px) {
+#app div.timenode .body {
+  margin: 0;
+  padding: 5px;
+  border-radius: 8px;
+  display: block;
+}
+#app div.timenode .card-name {
+  display: flex;
+  align-items: center;
+  margin: 10px 5px 5px 5px;
+}
+}
 div.timenode {
   position: relative;
   padding: 10px 20px;
@@ -177,10 +191,6 @@ div.timenode:last-child:after {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-div.timenode .time,
-div.timenode .body {
-  max-width: calc(100% - 24px);
-}
 div.timenode .time {
   position: relative;
   color: var(--color-meta);
@@ -193,14 +203,6 @@ div.timenode .time {
 div.timenode .time p {
   font-weight: bold;
   margin: 0 0 0 24px;
-}
-div.timenode .body {
-  margin: 24px;
-  padding: 16px;
-  border-radius: 8px;
-  background: var(--color-block);
-  display: block;
-  min-width: 210px;
 }
 div.timenode .body:empty {
   display: none;
@@ -225,7 +227,7 @@ div.timenode:hover .time:after {
   transform: scale(1);
 }
 div.timenode .body {
-  margin: 0 24px;
+  margin: 0 15px;
   padding: 0 16px 16px 16px;
   border-radius: 8px;
 /*   background: #f6f6f6; */
@@ -293,7 +295,7 @@ button.next {
   transition: all 0.5s ease-out;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 1000% 1000%;
-  animation: Gradient 90s linear infinite;
+  animation: Gradient 10s linear infinite;
   outline: 0;
   box-shadow: 0 0px 5px 2px rgb(7 17 27 / 15%);
 }

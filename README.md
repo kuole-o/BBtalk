@@ -16,6 +16,10 @@ bbtalk.init({
 })
 </script>
 ```
+- 适配 butterfly图片灯箱；
+- 增加wow动画（需网站本身引入wow.js）
+- 样式调整
+
 # BBtalk.JS
 
 详细教程请移步 [使用文档](https://bb.js.org/) 
