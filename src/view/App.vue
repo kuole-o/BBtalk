@@ -14,7 +14,7 @@
         </svg>
         <div class="time">
         <p>
-          <time v-bind:datetime="item.attributes.time" :title="item.attributes.Time">
+          <time v-bind:datetime="item.attributes.time" :data-msg="item.attributes.Time">
           {{item.attributes.time}}
             </time>
         </p>
@@ -216,15 +216,48 @@ div.timenode .body > *:last-child {
 div.timenode .body .highlight {
   border: 1px solid #e4e4e4;
 }
-div.timenode:hover .time {
-  color: var(--color-text);
+div.timenode time::after {
+  content: attr(data-msg);
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
 }
-div.timenode:hover .time:before {
-  background: rgba(255, 87, 34, 0.5);
+div.timenode time:hover:after {
+  background: var(--bb-TimeTitle-bg);
+  color: var(--bb-TimeTitle);
+  left: calc(50% - 70px);
+  top: 36px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  width: 150px;
+  height: auto;
+  opacity: 0.9;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 1s;
 }
-div.timenode:hover .time:after {
-  background: #ff5722;
-  transform: scale(1);
+/* 小三角标 */
+div.timenode time::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0;
+}
+div.timenode time:hover:before {
+  top: 24px;
+  left: calc(50% - 4px);
+  text-align: center;
+  width: 8px;
+  height: 6px;
+  border: 6px dashed var(--bb-TimeTitle-bg);
+  border-color: transparent transparent var(--bb-TimeTitle-bg) transparent;
+  opacity: 0.9;
+/*   transition: opacity 0.5s; */
 }
 div.timenode .body {
   margin: 0 15px;
