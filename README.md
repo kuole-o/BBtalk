@@ -19,6 +19,17 @@ bbtalk.init({
 - 适配 butterfly图片灯箱；
 - 增加wow动画（需网站本身引入wow.js）
 - 样式调整
+- 说说日期鼠标悬浮样式调整，用了两个颜色（适配暗色模式），直接复用效果异常，可在bb页面的md中加入以下内容：
+```css
+#app div.timenode time:hover:after {
+  background: #333; /* 自定义背景色 */
+  color: #fff; /* 自定义文字颜色 */
+}
+#app div.timenode time:hover:before {
+  border: 6px dashed #333; /* #333 替换成自定义小三角填充色 */
+  border-color: transparent transparent #333 transparent; /*  #333 替换成自定义小三角填充色 */
+}
+```
 
 # BBtalk.JS
 
